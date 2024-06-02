@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" id="body">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="../image/icone.svg" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body >
+    <form action="process.php" method="post" enctype="multipart/form-data">
+      <section>
+        <div class="hiro">
+          <div>
+            <label for="">Full Name</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="">Email</label>
+            <input type="email" />
+          </div>
+        </div>
+
+        <div class="photo-container">
+          <img id="photo" class="photo" src="../image/placeholder.jpg" />
+          <input
+            id="inputPhoto"
+            class="photo-input"
+            type="file"
+            accept="image/jpeg, image/png, image/jpg"
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Passport Data</h2>
+        <div class="hiro">
+          <div>
+            <label for="">Nationality:</label>
+            <select name="nationality" id="nationality">
+  <option value="AF">Afghan</option>
+  <option value="AX">Åland Islander</option>
+  <option value="AL">Albanian</option>
+  <option value="DZ">Algerian</option>
+  <option value="AS">American Samoan</option>
+  <option value="AD">Andorran</option>
+  <option value="AO">Angolan</option>
+  <option value="AI">Anguillan</option>
+  <option value="AQ">Antarctic</option>
+  <option value="AG">Antiguan or Barbudan</option>
+  <option value="AR">Argentine</option>
+  <option value="AM">Armenian</option>
+  <option value="AW">Aruban</option>
+  <option value="AU">Australian</option>
+  <option value="AT">Austrian</option>
+  <option value="AZ">Azerbaijani</option>
+  <option value="BS">Bahamian</option>
+  <option value="BH">Bahraini</option>
+  <option value="BD">Bangladeshi</option>
+  <option value="BB">Barbadian</option>
+  <option value="BY">Belarusian</option>
+  <option value="BE">Belgian</option>
+  <option value="BZ">Belizean</option>
+  <option value="BJ">Beninese, Beninois</option>
+  <option value="BM">Bermudian, Bermudan</option>
+  <option value="BT">Bhutanese</option>
+  <option value="BO">Bolivian</option>
+  <option value="BQ">Bonaire</option>
+  <option value="BA">Bosnian or Herzegovinian</option>
+  <option value="BW">Motswana, Botswanan</option>
+  <option value="BV">Bouvet Islander</option>
+  <option value="BR">Brazilian</option>
+  <option value="IO">BIOT</option>
+  <option value="VG">British Virgin Islander</option>
+  <option value="BN">Bruneian</option>
+  <option value="BG">Bulgarian</option>
+  <option value="BF">Burkinabé</option>
+  <option value="BI">Burundian</option>
+  <option value="KH">Cambodian</option>
+  <option value="CM">Cameroonian</option>
+  <option value="CA">Canadian</option>
+  <option value="CV">Cape Verdean</option>
+  <option value="KY">Caymanian</option>
+  <option value="CF">Central African</option>
+  <option value="TD">Chadian</option>
+  <option value="CL">Chilean</option>
+  <option value="CN">Chinese</option>
+  <option value="CX">Christmas Islander</option>
+  <option value="CC">Cocos Islander</option>
+  <option value="CO">Colombian</option>
+  <option value="KM">Comoran</option>
+  <option value="CG">Congolese</option>
+  <option value="CD">Congolese</option>
+  <option value="CK">Cook Islander</option>
+  <option value="CR">Costa Rican</option>
+  <option value="HR">Croatian</option>
+  <option value="CU">Cuban</option>
+  <option value="CW">Curaçaoan</option>
+  <option value="CY">Cypriot</option>
+  <option value="CZ">Czech</option>
+  <option value="DK">Danish</option>
+  <option value="DJ">Djiboutian</option>
+  <option value="DM">Dominican</option>
+  <option value="DO">Dominican</option>
+  <option value="EC">Ecuadorian</option>
+  <option value="EG">Egyptian</option>
+  <option value="SV">Salvadoran</option>
+  <option value="GQ">Equatorial Guinean</option>
+  <option value="ER">Eritrean</option>
+  <option value="EE">Estonian</option>
+  <option value="ET">Ethiopian</option>
+  <option value="FK">Falkland Islander</option>
+  <option value="FO">Faroese</option>
+  <option value="FJ">Fijian</option>
+  <option value="FI">Finnish</option>
+  <option value="FR">French</option>
+  <option value="GF">French Guianese</option>
+  <option value="PF">French Polynesian</option>
+  <option value="TF">French Southern Territories</option>
+  <option value="GA">Gabonese</option>
+  <option value="GM">Gambian</option>
+  <option value="GE">Georgian</option>
+  <option value="DE">German</option>
+  <option value="GH">Ghanaian</option>
+  <option value="GI">Gibraltar</option>
+  <option value="GR">Greek</option>
+  <option value="GL">Greenlandic</option>
+  <option value="GD">Grenadian</option>
+  <option value="GP">Guadeloupe</option>
+  <option value="GU">Guamanian</option>
+  <option value="GT">Guatemalan</option>
+  <option value="GG">Channel Islander</option>
+  <option value="GN">Guinean</option>
+  <option value="GW">Bissau-Guinean</option>
+  <option value="GY">Guyanese</option>
+  <option value="HT">Haitian</option>
+  <option value="HM">Heard Island and McDonald Islands</option>
+  <option value="VA">Vatican</option>
+  <option value="HN">Honduran</option>
+  <option value="HK">Hong Kong, Hong Kongese</option>
+  <option value="HU">Hungarian, Magyar</option>
+  <option value="IS">Icelandic</option>
+  <option value="IN">Indian</option>
+  <option value="ID">Indonesian</option>
+  <option value="IR">Iranian</option>
+  <option value="IQ">Iraqi</option>
+  <option value="IE">Irish</option>
+  <option value="IM">Manx</option>
+  <option value="IL">Israeli</option>
+  <option value="IT">Italian</option>
+  <option value="CI">Ivorian</option>
+  <option value="JM">Jamaica</option>
+<option value="JP">Japanese</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordanian</option>
+<option value="KZ">Kazakhstani</option>
+<option value="KE">Kenyan</option>
+<option value="KI">I-Kiribati</option>
+<option value="XK">Kosovar</option>
+<option value="KW">Kuwaiti</option>
+<option value="KG">Kyrgyzstani</option>
+<option value="LA">Laotian</option>
+<option value="LV">Latvian</option>
+<option value="LB">Lebanese</option>
+<option value="LS">Basotho</option>
+<option value="LR">Liberian</option>
+<option value="LY">Libyan</option>
+<option value="LI">Liechtensteiner</option>
+<option value="LT">Lithuanian</option>
+<option value="LU">Luxembourgish</option>
+<option value="MO">Macanese</option>
+<option value="MG">Malagasy</option>
+<option value="MW">Malawian</option>
+<option value="MY">Malaysian</option>
+<option value="MV">Maldivian</option>
+<option value="ML">Malian</option>
+<option value="MT">Maltese</option>
+<option value="MH">Marshallese</option>
+<option value="MQ">Martiniquais, Martinican</option>
+<option value="MR">Mauritanian</option>
+<option value="MU">Mauritian</option>
+<option value="YT">Mahoran</option>
+<option value="MX">Mexican</option>
+<option value="FM">Micronesian</option>
+<option value="MD">Moldovan</option>
+<option value="MC">Monégasque, Monacan</option>
+<option value="MN">Mongolian</option>
+<option value="ME">Montenegrin</option>
+<option value="MS">Montserratian</option>
+<option value="MA">Moroccan</option>
+<option value="MZ">Mozambican</option>
+<option value="MM">Burmese</option>
+<option value="NA">Namibian</option>
+<option value="NR">Nauruan</option>
+<option value="NP">Nepali, Nepalese</option>
+<option value="NL">Dutch, Netherlandic</option>
+<option value="NC">New Caledonian</option>
+<option value="NZ">New Zealand, NZ</option>
+<option value="NI">Nicaraguan</option>
+<option value="NE">Nigerien</option>
+<option value="NG">Nigerian</option>
+<option value="NU">Niuean</option>
+<option value="NF">Norfolk Islander</option>
+<option value="KP">North Korean</option>
+<option value="MK">Macedonian</option>
+<option value="MP">Northern Marianan</option>
+<option value="NO">Norwegian</option>
+<option value="OM">Omani</option>
+<option value="PK">Pakistani</option>
+<option value="PW">Palauan</option>
+<option value="PS">Palestinian</option>
+<option value="PA">Panamanian</option>
+<option value="PG">Papua New Guinean, Papuan</option>
+<option value="PY">Paraguayan</option>
+<option value="PE">Peruvian</option>
+<option value="PH">Filipino, Philippine</option>
+<option value="PN">Pitcairn Islander</option>
+<option value="PL">Polish</option>
+<option value="PT">Portuguese</option>
+<option value="PR">Puerto Rican</option>
+<option value="QA">Qatari</option>
+<option value="RE">Réunionese, Reunionese</option>
+<option value="RO">Romanian</option>
+<option value="RU">Russian</option>
+<option value="RW">Rwandan</option>
+<option value="BL">Saint Barthélemy Islander</option>
+<option value="SH">Saint Helenian</option>
+<option value="KN">Kittitian or Nevisian</option>
+<option value="LC">Saint Lucian</option>
+<option value="MF">Saint-Martinoise</option>
+<option value="PM">Saint-Pierrais or Miquelonnais</option>
+<option value="VC">Saint Vincentian, Vincentian</option>
+<option value="WS">Samoan</option>
+<option value="SM">Sammarinese</option>
+<option value="ST">São Toméan</option>
+<option value="SA">Saudi, Saudi Arabian</option>
+<option value="SN">Senegalese</option>
+<option value="RS">Serbian</option>
+<option value="SC">Seychellois</option>
+<option value="SL">Sierra Leonean</option>
+<option value="SG">Singaporean</option>
+<option value="SX">Sint Maarten</option>
+<option value="SK">Slovak</option>
+<option value="SI">Slovenian</option>
+<option value="SB">Solomon Islander</option>
+<option value="SO">Somali, Somalian</option>
+<option value="ZA">South African</option>
+<option value="GS">South Georgia or South Sandwich Islands</option>
+<option value="KR">South Korean</option>
+<option value="SS">South Sudanese</option>
+<option value="ES">Spanish</option>
+<option value="LK">Sri Lankan</option>
+<option value="SD">Sudanese</option>
+<option value="SR">Surinamese</option>
+<option value="SJ">Svalbard</option>
+<option value="SZ">Swazi</option>
+<option value="SE">Swedish</option>
+<option value="CH">Swiss</option>
+<option value="SY">Syrian</option>
+<option value="TW">Taiwanese</option>
+<option value="TJ">Tajikistani</option>
+<option value="TZ">Tanzanian</option>
+<option value="TH">Thai</option>
+<option value="TL">Timorese</option>
+<option value="TG">Togolese</option>
+<option value="TK">Tokelauan</option>
+<option value="TO">Tongan</option>
+<option value="TT">Trinidadian or Tobagonian</option>
+<option value="TN">Tunisian</option>
+<option value="TR">Turkish</option>
+<option value="TM">Turkmen</option>
+<option value="TC">Turks and Caicos Islander</option>
+<option value="TV">Tuvaluan</option>
+<option value="UG">Ugandan</option>
+<option value="UA">Ukrainian</option>
+<option value="AE">Emirati</option>
+<option value="GB">British, UK</option>
+<option value="US">American</option>
+<option value="UM">US Minor Outlying Islander</option>
+<option value="VI">Virgin Islander</option>
+<option value="UY">Uruguayan</option>
+<option value="UZ">Uzbekistani</option>
+<option value="VU">Vanuatuan</option>
+<option value="VE">Venezuelan</option>
+<option value="VN">Vietnamese</option>
+
+<option value="WF">Wallis and Futuna, Wallisian or Futunan</option>
+<option value="EH">Sahrawi, Sahrawian, Sahraouian</option>
+<option value="YE">Yemeni</option>
+<option value="ZM">Zambian</option>
+<option value="ZW">Zimbabwean</option>
+</select>
+
+          </div>
+          <div>
+            <label for="">Passport Number:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="">Place of Birth:</label>
+            <input type="text" />
+          </div>
+
+          <div class="flex">
+            <div>
+              <label for="">Date of Birth:</label>
+              <input type="date" />
+            </div>
+            <div>
+              <label for="">Issue Date:</label>
+              <input type="date" />
+            </div>
+            <div>
+              <label for="">Expiry Date:</label>
+              <input type="date" />
+            </div>
+
+            <div>
+              <label for="">Gender:</label>
+              <select name="" id="">
+                <option value=""></option>
+                <option selected disabled value="select">select</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="">Place of Issue:</label>
+            <input type="text" />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="hiro">
+          <div>
+            <label for="">Educational Qualification:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="">Year of Graduation:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="">Personal Address:</label>
+            <input type="text" />
+          </div>
+          <div>
+            <div class="container">
+    <label class="label">
+        Phone number
+    </label>
+    <div class="input-wrapper">
+    <div class="select-container">
+        <select id="countrySelect">
+          <option value="AF">Afghanistan (+93)</option>
+<option value="AL">Albania (+355)</option>
+<option value="DZ">Algeria (+213)</option>
+<option value="AD">Andorra (+376)</option>
+<option value="AO">Angola (+244)</option>
+<option value="AG">Antigua and Barbuda (+1-268)</option>
+<option value="AR">Argentina (+54)</option>
+<option value="AM">Armenia (+374)</option>
+<option value="AU">Australia (+61)</option>
+<option value="AT">Austria (+43)</option>
+<option value="AZ">Azerbaijan (+994)</option>
+<option value="BS">Bahamas (+1-242)</option>
+<option value="BH">Bahrain (+973)</option>
+<option value="BD">Bangladesh (+880)</option>
+<option value="BB">Barbados (+1-246)</option>
+<option value="BY">Belarus (+375)</option>
+<option value="BE">Belgium (+32)</option>
+<option value="BZ">Belize (+501)</option>
+<option value="BJ">Benin (+229)</option>
+<option value="BT">Bhutan (+975)</option>
+<option value="BO">Bolivia (+591)</option>
+<option value="BA">Bosnia and Herzegovina (+387)</option>
+<option value="BW">Botswana (+267)</option>
+<option value="BR">Brazil (+55)</option>
+<option value="BN">Brunei (+673)</option>
+<option value="BG">Bulgaria (+359)</option>
+<option value="BF">Burkina Faso (+226)</option>
+<option value="BI">Burundi (+257)</option>
+<option value="KH">Cambodia (+855)</option>
+<option value="CM">Cameroon (+237)</option>
+<option value="CA">Canada (+1)</option>
+<option value="CV">Cape Verde (+238)</option>
+<option value="CF">Central African Republic (+236)</option>
+<option value="TD">Chad (+235)</option>
+<option value="CL">Chile (+56)</option>
+<option value="CN">China (+86)</option>
+<option value="CO">Colombia (+57)</option>
+<option value="KM">Comoros (+269)</option>
+<option value="CG">Congo (+242)</option>
+<option value="CD">Congo, Democratic Republic of the (+243)</option>
+<option value="CR">Costa Rica (+506)</option>
+<option value="HR">Croatia (+385)</option>
+<option value="CU">Cuba (+53)</option>
+<option value="CY">Cyprus (+357)</option>
+<option value="CZ">Czech Republic (+420)</option>
+<option value="DK">Denmark (+45)</option>
+<option value="DJ">Djibouti (+253)</option>
+<option value="DM">Dominica (+1-767)</option>
+<option value="DO">Dominican Republic (+1-809)</option>
+<option value="EC">Ecuador (+593)</option>
+<option value="EG">Egypt (+20)</option>
+<option value="SV">El Salvador (+503)</option>
+<option value="GQ">Equatorial Guinea (+240)</option>
+<option value="ER">Eritrea (+291)</option>
+<option value="EE">Estonia (+372)</option>
+<option value="ET">Ethiopia (+251)</option>
+<option value="FJ">Fiji (+679)</option>
+<option value="FI">Finland (+358)</option>
+<option value="FR">France (+33)</option>
+<option value="GA">Gabon (+241)</option>
+<option value="GM">Gambia (+220)</option>
+<option value="GE">Georgia (+995)</option>
+<option value="DE">Germany (+49)</option>
+<option value="GH">Ghana (+233)</option>
+<option value="GR">Greece (+30)</option>
+<option value="GD">Grenada (+1-473)</option>
+<option value="GT">Guatemala (+502)</option>
+<option value="GN">Guinea (+224)</option>
+<option value="GW">Guinea-Bissau (+245)</option>
+<option value="GY">Guyana (+592)</option>
+<option value="HT">Haiti (+509)</option>
+<option value="HN">Honduras (+504)</option>
+<option value="HU">Hungary (+36)</option>
+<option value="IS">Iceland (+354)</option>
+<option value="IN">India (+91)</option>
+<option value="ID">Indonesia (+62)</option>
+<option value="IR">Iran (+98)</option>
+<option value="IQ">Iraq (+964)</option>
+<option value="IE">Ireland (+353)</option>
+<option value="IT">Italy (+39)</option>
+<option value="JM">Jamaica (+1-876)</option>
+<option value="JP">Japan (+81)</option>
+<option value="JO">Jordan (+962)</option>
+<option value="KZ">Kazakhstan (+7)</option>
+<option value="KE">Kenya (+254)</option>
+<option value="KI">Kiribati (+686)</option>
+<option value="KP">Korea, North (+850)</option>
+<option value="KR">Korea, South (+82)</option>
+<option value="KW">Kuwait (+965)</option>
+<option value="KG">Kyrgyzstan (+996)</option>
+<option value="LA">Laos (+856)</option>
+<option value="LV">Latvia (+371)</option>
+<option value="LB">Lebanon (+961)</option>
+<option value="LS">Lesotho (+266)</option>
+<option value="LR">Liberia (+231)</option>
+<option value="LY">Libya (+218)</option>
+<option value="LI">Liechtenstein (+423)</option>
+<option value="LT">Lithuania (+370)</option>
+<option value="LU">Luxembourg (+352)</option>
+<option value="MK">Macedonia (+389)</option>
+<option value="MG">Madagascar (+261)</option>
+<option value="MW">Malawi (+265)</option>
+<option value="MY">Malaysia (+60)</option>
+<option value="MV">Maldives (+960)</option>
+<option value="ML">Mali (+223)</option>
+<option value="MT">Malta (+356)</option>
+<option value="MH">Marshall Islands (+692)</option>
+<option value="MQ">Martinique (+596)</option>
+<option value="MR">Mauritania (+222)</option>
+<option value="MU">Mauritius (+230)</option>
+<option value="MX">Mexico (+52)</option>
+<option value="FM">Micronesia (+691)</option>
+<option value="MD">Moldova (+373)</option>
+<option value="MC">Monaco (+377)</option>
+<option value="MN">Mongolia (+976)</option>
+<option value="ME">Montenegro (+382)</option>
+<option value="MA">Morocco (+212)</option>
+<option value="MZ">Mozambique (+258)</option>
+<option value="MM">Myanmar (+95)</option>
+<option value="NA">Namibia (+264)</option>
+<option value="NR">Nauru (+674)</option>
+<option value="NP">Nepal (+977)</option>
+<option value="NL">Netherlands (+31)</option>
+<option value="NZ">New Zealand (+64)</option>
+<option value="NI">Nicaragua (+505)</option>
+<option value="NE">Niger (+227)</option>
+<option value="NG">Nigeria (+234)</option>
+<option value="NO">Norway (+47)</option>
+<option value="OM">Oman (+968)</option>
+<option value="PK">Pakistan (+92)</option>
+<option value="PW">Palau (+680)</option>
+<option value="PS">Palestine (+970)</option>
+<option value="PA">Panama (+507)</option>
+<option value="PG">Papua New Guinea (+675)</option>
+<option value="PY">Paraguay (+595)</option>
+<option value="PE">Peru (+51)</option>
+<option value="PH">Philippines (+63)</option>
+<option value="PL">Poland (+48)</option>
+<option value="PT">Portugal (+351)</option>
+<option value="QA">Qatar (+974)</option>
+<option value="RO">Romania (+40)</option>
+<option value="RU">Russia (+7)</option>
+<option value="RW">Rwanda (+250)</option>
+<option value="KN">Saint Kitts and Nevis (+1-869)</option>
+<option value="LC">Saint Lucia (+1-758)</option>
+<option value="VC">Saint Vincent and the Grenadines (+1-784)</option>
+<option value="WS">Samoa (+685)</option>
+<option value="SM">San Marino (+378)</option>
+<option value="ST">Sao Tome and Principe (+239)</option>
+<option value="SA">Saudi Arabia (+966)</option>
+<option value="SN">Senegal (+221)</option>
+<option value="RS">Serbia (+381)</option>
+<option value="SC">Seychelles (+248)</option>
+<option value="SL">Sierra Leone (+232)</option>
+<option value="SG">Singapore (+65)</option>
+<option value="SK">Slovakia (+421)</option>
+<option value="SI">Slovenia (+386)</option>
+<option value="SB">Solomon Islands (+677)</option>
+<option value="SO">Somalia (+252)</option>
+<option value="ZA">South Africa (+27)</option>
+<option value="ES">Spain (+34)</option>
+<option value="LK">Sri Lanka (+94)</option>
+<option value="SD">Sudan (+249)</option>
+<option value="SR">Suriname (+597)</option>
+<option value="SZ">Swaziland (+268)</option>
+<option value="SE">Sweden (+46)</option>
+<option value="CH">Switzerland (+41)</option>
+<option value="SY">Syria (+963)</option>
+<option value="TJ">Tajikistan (+992)</option>
+<option value="TZ">Tanzania (+255)</option>
+<option value="TH">Thailand (+66)</option>
+<option value="TG">Togo (+228)</option>
+<option value="TO">Tonga (+676)</option>
+<option value="TT">Trinidad and Tobago (+1-868)</option>
+<option value="TN">Tunisia (+216)</option>
+<option value="TR">Turkey (+90)</option>
+<option value="TM">Turkmenistan (+993)</option>
+<option value="TV">Tuvalu (+688)</option>
+<option value="UG">Uganda (+256)</option>
+<option value="UA">Ukraine (+380)</option>
+<option value="AE">United Arab Emirates (+971)</option>
+<option value="US">United States (+1)</option>
+<option value="GB">United Kingdom (+44)</option>
+<option value="UY">Uruguay (+598)</option>
+<option value="UZ">Uzbekistan (+998)</option>
+<option value="VU">Vanuatu (+678)</option>
+<option value="VA">Vatican City (+379)</option>
+<option value="VE">Venezuela (+58)</option>
+<option value="VN">Vietnam (+84)</option>
+<option value="YE">Yemen (+967)</option>
+<option value="ZM">Zambia (+260)</option>
+<option value="ZW">Zimbabwe (+263)</option>
+
+
+        </select>
+    </div>
+    <input type="tel" id="phoneNumber" placeholder="Enter phone number">
+</div>
+</div<
+
+          </div>
+        </div>
+      </section>
+
+      <section class="hidden">
+        <h2>Attachments</h2>
+        <div class="hiro">
+          <div>
+            <label>Attach Educational Certificate:</label>
+            <input id="inputEducational" type="file" name="degree-file" />
+          </div>
+          <div>
+            <label>Attach Passport Image:</label>
+            <input id="inputPassport" type="file" name="passport-file" />
+          </div>
+        </div>
+      </section>
+    </form>
+    <div class=" print hiro hidden">
+      <!-- <button onclick="downloadPdf()">Download Pdf</button> -->
+      <button class="print-btn" onclick="printAndSaveAsPdf()">Save as PDF</button>
+    </div>
+    
+    <div class="AttachmentsPage">
+      <img id="Educational" src="" alt="" />
+    </div>
+
+    <div class="AttachmentsPage">
+      <img id="Passport" src="" alt="" />
+    </div>
+
+    <script>
+      let photo = document.getElementById("photo");
+      let inputPhoto = document.getElementById("inputPhoto");
+
+      inputPhoto.onchange = function () {
+        photo.src = URL.createObjectURL(inputPhoto.files[0]);
+      };
+
+      let Educational = document.getElementById("Educational");
+      let inputEducational = document.getElementById("inputEducational");
+
+      inputEducational.onchange = function () {
+        Educational.src = URL.createObjectURL(inputEducational.files[0]);
+      };
+
+      let Passport = document.getElementById("Passport");
+      let inputPassport = document.getElementById("inputPassport");
+
+      inputPassport.onchange = function () {
+        Passport.src = URL.createObjectURL(inputPassport.files[0]);
+      };
+
+      function printAndSaveAsPdf() {
+        window.print();
+      }
+
+var select = document.getElementById("nationality");
+var input = document.getElementById("searchInput");
+
+input.addEventListener("focus", function() {
+  select.style.display = "block";
+});
+
+input.addEventListener("blur", function() {
+  setTimeout(function() {
+    select.style.display = "none";
+  }, 200);
+});
+
+function filterCountries() {
+  var filter, option, i;
+  filter = input.value.toUpperCase();
+  option = select.getElementsByTagName("option");
+  for (i = 0; i < option.length; i++) {
+    if (option[i].textContent.toUpperCase().indexOf(filter) > -1) {
+      option[i].style.display = "";
+    } else {
+      option[i].style.display = "none";
+    }
+  }
+}
+
+
+    </script>
+  </body>
+</html>
